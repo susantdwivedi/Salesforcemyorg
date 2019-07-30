@@ -1,0 +1,10 @@
+<aura:component >
+
+    <aura:attribute name="numberONE" type="integer" default="100,000"/>
+<ui:inputNumber label="Input1" value="{!v.numberONE}"/>
+<aura:attribute name="numberTWO" type="integer" default="100000"/>
+<ui:inputNumber label="Input2" value="{!v.numberTWO}"/>
+  <c:actionChildComp aura:id="childId"/>  
+<lightning:button onclick="{!c.addSumEvent}" label="Add and Show"/>
+
+</aura:component>

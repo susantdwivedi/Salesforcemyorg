@@ -1,0 +1,7 @@
+<aura:component >
+	<aura:attribute name="DemoAtt" type="String"></aura:attribute>
+    
+    {!v.DemoAtt}
+    <h1>Welcome to Lightning</h1>
+    <c:Democomponent1 />
+</aura:component>

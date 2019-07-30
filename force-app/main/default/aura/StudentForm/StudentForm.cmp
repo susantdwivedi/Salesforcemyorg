@@ -1,0 +1,100 @@
+<aura:component controller="studentData" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:appHostable,force:lightningQuickActionWithoutHeader,force:hasRecordId" access="global">
+   <aura:attribute name="StudentEnterDetails" type="Student__c" default="{ 'sobjectType': 'Student__c', 'Name': '', 'LT_Roll_Number__c': 0,'LT_Father_Name__c': ''}" />
+    <aura:attribute name="StudentDetails" type="Student__c" default="{ 'sobjectType': 'Student__c', 'Name': '', 'LT_Roll_Number__c': 0, 'LT_Father_Name__c': ''}"/>
+    <aura:registerEvent name="methodname" type="c:StudentApplicationEvent"/>
+    
+    <div class="container bgColor">
+    <form class="slds-form--stacked">
+       
+      <div class="slds-form-element slds-is-required">
+        <div class="slds-form-element__control">
+
+          <ui:inputText aura:id="studname" label="Student Name"
+                        class="slds-input"
+                        labelClass="slds-form-element__label"
+                        value="{!v.StudentDetails.Name}"
+                        required="true"/>
+         </div>
+       </div>
+       <div class="slds-form-element slds-is-required">
+         <div class="slds-form-element__control">
+           <ui:inputText aura:id="rollno" label="Student Roll"
+                           class="slds-input"
+                           labelClass="slds-form-element__label"
+                           value="{!v.StudentDetails.LT_Roll_Number__c}"
+                           required="true"/>
+          </div>
+        </div>
+        <div class="slds-form-element slds-is-required">
+         <div class="slds-form-element__control">
+           <ui:inputSelect aura:id="TypeofStu" label="Type of Student"
+                           class="slds-input"
+                           labelClass="slds-form-element__label">
+               <ui:inputSelectOption text="" label="--None--"/>
+               <ui:inputSelectOption text="Day Boarding" label="Day Boarding"/>
+               <ui:inputSelectOption text="Hostalite" label="Hostalite"/>
+               <ui:inputSelectOption text="Local" label="Local"/>
+           </ui:inputSelect> 
+          </div>
+        </div>
+        <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+            <ui:inputText aura:id="studfname" label="Student Father's Name"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.StudentDetails.LT_Father_Name__c}"
+                          />
+           </div>
+        </div>
+        <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+            <ui:inputText aura:id="skoolname" label="School Name"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.StudentDetails.LT_School_Name__c}"
+                          />
+           </div>
+        </div> 
+          <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+            <ui:inputText aura:id="Mobilenu" label="Mobile Number"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.StudentDetails.Mobile_Number__c}"
+                          />
+           </div>
+        </div>
+        <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+            <ui:inputText aura:id="sStandard" label="Standard"
+                          class="slds-input"
+                          labelClass="slds-form-element__label"
+                          value="{!v.StudentDetails.LT_Standard__c}"
+                          />
+           </div>
+                </div>
+                <div class="slds-form-element slds-is-required">
+                       <div class="slds-form-element__control">
+                           <ui:inputDate aura:id="sStandarddate" label="Date of Birth"
+                          class="slds-input" format="MM-DD-YYYY" 
+                          labelClass="slds-form-element__label" value="{!v.StudentDetails.LT_Date_of_Birth__c}" displayDatePicker="true"/>
+                		</div>
+                </div>
+					<div class="slds-form-element">
+					  <ui:button label="Submit"
+						  class="slds-button slds-button--brand"
+						  press="{!c.savedata}"/>
+					   <ui:button label="Call Event"
+						  class="slds-button slds-button--brand"
+						  press="{!c.EventCall}"/>  
+				  </div> 
+    </form>
+</div><br/><br/>
+ <div class="container slds-p-top--medium">
+    <div id="list" class="row">
+    <ui:outputText value="{!v.StudentEnterDetails.Name}" /><br/>
+    <ui:outputText value="{!v.StudentEnterDetails.LT_Father_Name__c}" /><br/>
+    <ui:outputNumber value="{!v.StudentEnterDetails.LT_Roll_Number__c}" />
+    </div>
+ </div> 
+</aura:component>

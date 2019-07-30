@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome">
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="accountRecord" type="Object" />
+
+     <force:recordData recordId="{!v.recordId}"
+          targetRecord="{!v.record}"
+          targetFields="{!v.accountRecord}"
+          fields="Id, Name"/>
+
+    <lightning:card title="{!v.accountRecord.Name}"
+                footer="Your footer text goes here" >        
+    </lightning:card>
+    <lightning:formattedText title="Industry" value="{!v.accountRecord.Industry}"/>
+    <lightning:formattedText title="Description" value="{!v.accountRecord.Description }"/>
+    <lightning:formattedPhone title="Phone" value="{!v.accountRecord.Phone}"/>
+
+</aura:component>

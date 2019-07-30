@@ -1,0 +1,10 @@
+<aura:component controller="AccountFormByIDController" >
+    <aura:attribute name="accGetID" type="String"/> 
+    <aura:attribute name="ac" type="Account"/>   
+    <aura:handler name="init" value="{!this}" action="{!c.doInitAction}" />
+    <ui:inputText label="Account Name" value="{!v.ac.Name}"/>
+    <ui:inputText label="Type" value="{!v.ac.Type}"/> 
+    <ui:inputText label="Industry" value="{!v.ac.Industry}"/>
+    <ui:inputText label="Phone" value="{!v.ac.Phone}"/>
+    <ui:inputText label="MobilePhone" value="{!v.ac.MobilePhone}"/>
+</aura:component>

@@ -1,0 +1,17 @@
+<aura:component controller="InsertContactController1" >
+    
+    <aura:registerEvent name="SavingEvent" type="c:eventtoaddContactEvent"/>
+    <aura:attribute name="Contact" type="Contact" default="{'sobjectType': 'Contact',
+                                            'FirstName': '',
+                                            'LastName': '' }"/>
+    <ui:inputText label="First Name" value="{!v.Contact.FirstName}" />
+    
+    <ui:inputText label="Last Name" value="{!v.Contact.LastName}"/>
+ 
+    <ui:inputEmail label="EmailId" value="{!v.Contact.Email}"/>
+  
+    <ui:inputPhone label="Phone" value="{!v.Contact.Phone}"/>
+  
+    <ui:inputPhone label="Mobile" value="{!v.Contact.MobilePhone}"/>	
+    <lightning:button onclick="{!c.SaveEvent}" label="Save and Show"/> 
+</aura:component>

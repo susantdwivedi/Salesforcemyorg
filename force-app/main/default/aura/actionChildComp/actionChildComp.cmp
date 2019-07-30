@@ -1,0 +1,12 @@
+<aura:component >
+	<aura:attribute name="numberfirst" type="integer" />
+    <aura:attribute name="numbersecond" type="integer" />
+    <aura:attribute name="total" type="integer" />
+    <aura:method name="addMethod" action="{!c.addNumber}" description="Adding Two number">
+        <aura:attribute name="numberONE" type="integer" />
+        <aura:attribute name="numberTWO" type="integer" />
+    </aura:method>
+    First Number:<ui:outputText value="{!v.numberfirst}"/><br/>
+    Second Number:<ui:outputText value="{!v.numbersecond}"/><br/>
+    Total:<ui:outputText value="{!v.total}"/><br/>
+</aura:component>

@@ -1,0 +1,62 @@
+<aura:component controller="getobjectdata" >
+	<aura:attribute name="lstadata" type="List" />
+    
+    <aura:handler name="init"
+                  value="{!this}"
+                  action="{!c.doInit}"/>
+    
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                       <caption class="slds-text-title_caps slds-text-color_destructive"><Strong>SLAB DETAILS :</Strong></caption>
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th class="slds-text-title_caps" scope="col">
+                                    <div class="slds-truncate" title="DOCUMENT #"><b>DOCUMENT #</b></div>
+                                </th>
+                                <th class="slds-text-title_caps" scope="col">
+                                    <div class="slds-truncate" title="SLAB LEN"><b>SLAB LEN</b></div>
+                                </th>
+                                <th class="slds-text-title_caps" scope="col">
+                                    <div class="slds-truncate" title="SLAB WID"><b>SLAB WID</b></div>
+                                </th>
+                                <th class="slds-text-title_caps" scope="col">
+                                    <div class="slds-truncate" title="TOTAL SF"><b>TOTAL SF</b></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                   <td class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate " title="DOCUMENT">  </div>
+                                    </td> 
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate" title="SLAB LEN">  </div>
+                                    </td >                                    
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate slds-align_absolute-center" title="SLAB WID"> </div>
+                                    </td>
+                                    <td class="slds-text-title_caps" scope="col">									
+                                        <div class="slds-truncate" title="TOTAL SF">  </div>
+                                    </td>
+                             </tr>
+                            <aura:iteration items="{!v.lstadata}" var="vardata" indexVar="eachInd">                                        
+                                <tr>
+                                   <td class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate " title="DOCUMENT">{!vardata.Name}  </div>
+                                    </td> 
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate" title="SLAB LEN">{!vardata.Name}  </div>
+                                    </td >                                    
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate slds-align_absolute-center" title="SLAB WID">{!vardata.Phone}  </div>
+                                    </td>
+                                    <td class="slds-text-title_caps" scope="col">									
+                                        <div class="slds-truncate" title="TOTAL SF"> 
+                                            <p > 
+                                            <lightning:button name="onClick" value="Tewst" class="slds-button slds-button_destructive slds-float_right" onclick="{!c.Closethemodal}" aura:id="{!eachInd}"/> 
+                                        </p> </div>                                   
+                                        </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+</aura:component>

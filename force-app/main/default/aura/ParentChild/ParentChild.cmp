@@ -1,0 +1,36 @@
+<aura:component controller="CreateContactRecord" >
+    
+    
+    <!-- Define Attribute-->
+    <aura:attribute name="contact" type="Contact" default="{'sobjectType': 'Contact',
+                                            'FirstName': '',
+                                            'LastName': '',
+                                            'Email': ''      }"/>
+    <div>
+        <h3>Please Enter The Contact Information</h3>
+        <div>
+            <label>First Name</label>
+            <ui:inputText value="{!v.contact.FirstName}" />
+
+        </div>
+        <div>
+            <label>Last Name</label>
+            <ui:inputText value="{!v.contact.LastName}"/>
+        </div>
+        <div>
+            <label>Email Address</label>
+            <ui:inputText value="{!v.contact.Email}"/>
+        </div>
+       
+    </div>
+    <div>
+        <ui:button press="{!c.create}">Create</ui:button>
+    </div><br/><br/>
+  <h2>The Contact present in the list</h2>  
+    <aura:attribute name="Contacts" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.getCon}"/>
+    <!--<ui:button label="Get Contacts" press="{!c.getCon}"/>-->
+    <aura:iteration var="Contact" items="{!v.Contacts}">
+    	<p>{!Contact.Name} : {!Contact.LastName} : {!Contact.Email}</p>
+    </aura:iteration>
+</aura:component>

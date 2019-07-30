@@ -1,0 +1,7 @@
+<aura:component controller="testLight">
+	<aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+    <aura:attribute name="displayHello" type="String" default="some string"/> 
+    <!--<ui:button label="Get Opportunities" press="{!c.myAction}"/>
+    <aura:attribute name="myText" type="String" default="some string"/>-->
+	<ui:outputText value="{!v.displayHello}" />
+</aura:component>

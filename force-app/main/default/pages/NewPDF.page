@@ -1,0 +1,111 @@
+<apex:page showHeader="false"  sidebar="false" standardStylesheets="false" renderAs="pdf" applyHtmlTag="false">
+ <head>
+    
+<style type="text/css">
+    table {
+        border-collapse: collapse;
+    }
+
+body {font-family: 'Arial';font-size:12pt;}
+
+    .headings{
+        color: black;
+        font-size:14pt;
+        font-weight:bold!important;
+        }
+    .texts{
+        color: #999999;
+        }
+        
+    .headerRow td{
+                   background-color: #F0F8E2;
+                   font-size: 16px;
+                    /*font-weight: bold;*/
+          }
+          .myCol{
+              border:solid 1px #000;
+              text-align:center;
+              
+          }
+        .myunderlinecss{
+        text-decoration: underline !important;
+        font-size:14px !important;
+        color:#020202 !important;
+        font-family: Arial Unicode MS;
+        }
+          
+</style>
+<style type="text/css" media="print">
+
+   @page {
+           size: A4 portrait;
+           border: 2px solid black;
+            @top-center {
+            padding-top: 70px;
+                   content: element(header);
+           } 
+       
+           
+           @bottom-left {
+                 content: element(footer);
+                 //padding-top: 180px;
+           }
+           
+           //padding-top: 180px;
+          // size: A4 portrait;
+           //border: 2px solid black;
+          
+           <!--<apex:outputPanel layout="none" rendered="{!IF(quotestatus!='Approved',true,false)}">
+                background: url("{!$Resource.DraftImage}") no-repeat center center;
+           </apex:outputPanel> -->
+        }
+        
+        
+        
+        
+         div.header {
+          padding: 10px;
+          position: running(header);
+       }
+       div.footer {
+        display: block;
+        margin-bottom: 80px !important;
+        color: gray;
+        font-size: 12px;
+        position: running(footer);
+      }
+  
+     .pagenumber:before {
+         content: counter(page);
+       }
+     .pagecount:before {
+         content: counter(pages);
+       }
+       .mylist{
+           padding-bottom:20px;
+       } 
+       .pageclassnew{
+       padding-top:130px;
+       }
+   
+    
+</style>
+
+</head>
+
+<body class="watermark">
+
+ <div class="header" >
+     <img src="{!URLFOR($Resource.images,'images/Header.png')}" style="width:100%" alt="Truck Oil" href="#" />
+ </div>
+ <div class="footer">
+     <center>Valvoline Cummins Private Limited <br/> 
+     3rd floor, Vipul Plaza, Suncity, Sector 54, Gurgaon – 122003, Haryana  <br/>
+     Visit us at www.valvolinecummins.com<br/>&nbsp;<br/>&nbsp;</center>
+ </div>
+<apex:form id="formid" styleClass="pageclassnew">
+
+    rdfjkhl;k;gtfhdrfghj;kljgtfhhghjkljhghdfjkjlkjgdthfgh;jogkhfxgfhgkhljhgsdfghjkfdhsgdfghj
+</apex:form>
+</body>
+</apex:page>

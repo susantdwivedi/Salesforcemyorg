@@ -1,0 +1,7 @@
+<!--c:eventBubblingGrandchild-->
+<aura:component >
+<aura:handler name="bubblingEvent" event="c:dataSendComponentEvent" action="{!c.handleBubbling}"/>
+<div class="grandchild">
+<c:dataSendComponent />
+</div>
+</aura:component>

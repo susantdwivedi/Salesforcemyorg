@@ -1,0 +1,187 @@
+<aura:component  >
+    <!-- Variables Defined     -->
+    <aura:attribute name="theViolatedPricingData" type="List"/>
+    <aura:attribute name="Addressdeatils" type="String"/>
+    <aura:attribute name="Widthdta" type="Boolean" default="false"/>
+    
+    <div aura:id="exampleModal" class="demo-only" style="height: 640px;">
+        <section role="dialog" tabindex="-1" aria-label="Meaningful description of the modal content" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <aura:if isTrue="{!v.Widthdta}">
+                <div class="slds-modal__container" style="width:100%">
+                    <header class="slds-modal__header slds-text-heading_large">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>SLAB DETAILS</Strong></h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-0">
+                        <table>
+                            <tr >
+                                <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                    <div class="slds-truncate">Store Address : </div>
+                                </td>
+                                <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                    <div class="slds-truncate"> NY,US</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                    <div class="slds-truncate">Store Ph No : </div>
+                                </td>
+                                <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                    <div class="slds-truncate">5089910315</div>
+                                </td>
+                            </tr>
+                        </table> 
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-1">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                            <caption class="slds-text-title_caps slds-text-color_destructive"><Strong>SLAB DETAILS :</Strong></caption>
+                            <thead>
+                                <tr class="slds-text-title_caps">
+                                    <th class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate" title="DOCUMENT #"><b>DOCUMENT #</b></div>
+                                    </th>
+                                    <th class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate" title="SLAB LEN"><b>SLAB LEN</b></div>
+                                    </th>
+                                    <th class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate" title="SLAB WID"><b>SLAB WID</b></div>
+                                    </th>
+                                    <th class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate" title="TOTAL SF"><b>TOTAL SF</b></div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="slds-text-title_caps" scope="col">
+                                        <div class="slds-truncate " title="DOCUMENT">  </div>
+                                    </td> 
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate" title="SLAB LEN">  </div>
+                                    </td >                                    
+                                    <td class="slds-text-title_caps" scope="col">                                        
+                                        <div class="slds-truncate slds-align_absolute-center" title="SLAB WID"> </div>
+                                    </td>
+                                    <td class="slds-text-title_caps" scope="col">									
+                                        <div class="slds-truncate" title="TOTAL SF">  </div>
+                                    </td>
+                                </tr>
+                                <aura:iteration items="{!v.theViolatedPricingData}" var="vardata" indexVar="eachInd">                                        
+                                    <tr>
+                                        <td class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate " title="DOCUMENT">  </div>
+                                        </td> 
+                                        <td class="slds-text-title_caps" scope="col">                                        
+                                            <div class="slds-truncate" title="SLAB LEN">  </div>
+                                        </td >                                    
+                                        <td class="slds-text-title_caps" scope="col">                                        
+                                            <div class="slds-truncate slds-align_absolute-center" title="SLAB WID"> </div>
+                                        </td>
+                                        <td class="slds-text-title_caps" scope="col">									
+                                            <div class="slds-truncate" title="TOTAL SF">  </div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral slds-float_left" onclick="{!c.Closethemodal}">PRODUCT LIST</button>
+                        <button class="slds-button slds-button_destructive slds-float_right" onclick="{!c.Closethemodal}">CANCEL</button>
+                    </footer>
+                </div> 
+                <aura:set attribute="else">
+                    <div class="slds-modal__container" >
+                        <header class="slds-modal__header slds-text-heading_large">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"><Strong>SLAB DETAILS</Strong></h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-0">
+                            <table>
+                                <tr >
+                                    <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                        <div class="slds-truncate">Store Address : </div>
+                                    </td>
+                                    <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                        <div class="slds-truncate"> NY,US</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                        <div class="slds-truncate">Store Ph No : </div>
+                                    </td>
+                                    <td class="slds-text-title_caps slds-text-color_destructive slds-float_left">
+                                        <div class="slds-truncate">5089910315</div>
+                                    </td>
+                                </tr>
+                            </table> 
+                        </div>
+                        <div class="slds-modal__content slds-p-around_medium " id="modal-content-id-1">
+                            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                                <caption class="slds-text-title_caps slds-text-color_destructive"><Strong>SLAB DETAILS :</Strong></caption>
+                                <thead>
+                                    <tr class="slds-text-title_caps">
+                                        <th class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate" title="DOCUMENT #"><b>DOCUMENT #</b></div>
+                                        </th>
+                                        <th class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate" title="SLAB LEN"><b>SLAB LEN</b></div>
+                                        </th>
+                                        <th class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate" title="SLAB WID"><b>SLAB WID</b></div>
+                                        </th>
+                                        <th class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate" title="TOTAL SF"><b>TOTAL SF</b></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="slds-text-title_caps" scope="col">
+                                            <div class="slds-truncate " title="DOCUMENT">  </div>
+                                        </td> 
+                                        <td class="slds-text-title_caps" scope="col">                                        
+                                            <div class="slds-truncate" title="SLAB LEN">  </div>
+                                        </td >                                    
+                                        <td class="slds-text-title_caps" scope="col">                                        
+                                            <div class="slds-truncate slds-align_absolute-center" title="SLAB WID"> </div>
+                                        </td>
+                                        <td class="slds-text-title_caps" scope="col">									
+                                            <div class="slds-truncate" title="TOTAL SF">  </div>
+                                        </td>
+                                    </tr>
+                                    <aura:iteration items="{!v.theViolatedPricingData}" var="vardata" indexVar="eachInd">                                        
+                                        <tr>
+                                            <td class="slds-text-title_caps" scope="col">
+                                                <div class="slds-truncate " title="DOCUMENT">  </div>
+                                            </td> 
+                                            <td class="slds-text-title_caps" scope="col">                                        
+                                                <div class="slds-truncate" title="SLAB LEN">  </div>
+                                            </td >                                    
+                                            <td class="slds-text-title_caps" scope="col">                                        
+                                                <div class="slds-truncate slds-align_absolute-center" title="SLAB WID"> </div>
+                                            </td>
+                                            <td class="slds-text-title_caps" scope="col">									
+                                                <div class="slds-truncate" title="TOTAL SF">  </div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral slds-float_left" onclick="{!c.Closethemodal}">PRODUCT LIST</button>
+                            <button class="slds-button slds-button_destructive slds-float_right" onclick="{!c.Closethemodal}">CANCEL</button>
+                        </footer>
+                    </div> 
+                </aura:set>
+            </aura:if>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+    
+</aura:component>

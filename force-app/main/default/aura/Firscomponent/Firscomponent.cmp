@@ -1,0 +1,20 @@
+<aura:component >
+<div aura:id="changeIt">Change Me!</div><br />
+<lightning:button onclick="{!c.applyCSS}" label="Add Style" />
+<lightning:button onclick="{!c.removeCSS}" label="Remove Style" />
+    <br/>
+    <aura:attribute name="Setinitialval" type="String" default="THE"></aura:attribute>
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <p>This value is set by controller after initialization</p>
+    <p><b>{!v.Setinitialval}</b></p>
+    <aura:attribute name="myCurrency" type="integer" />
+ 	<ui:inputNumber aura:id="amount" label="Amount" value="{!v.myCurrency}" />
+    <aura:attribute name="num" type="integer" />
+	<ui:inputNumber aura:id="num" label="Disc%" value="{!v.num}"/>
+    <lightning:button onclick="{!c.providediscount}" label="Discount Provided" />
+ 	<aura:attribute name="valafterdisc" type="integer" />
+    You entered: <ui:outputText value="{!v.valafterdisc}"/> <br/><br/>
+    <aura:attribute name="Checkboxname" type="Boolean" />
+	<ui:inputCheckbox aura:id="checkbox" label="Select ?" value="{!v.Checkboxname}"/>
+    <lightning:button onclick="{!c.changetrue}" label="Reverse" />
+</aura:component>

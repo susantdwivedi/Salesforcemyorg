@@ -1,0 +1,30 @@
+<aura:component implements="force:appHostable,force:lightningQuickAction">
+ 
+    <aura:handler name="SavingEvent" event="c:eventtoaddContactEvent"
+    action="{!c.handleComponentEvent}"/>
+
+    <aura:attribute name="objCon" type="Contact" />
+    <form>
+        <p>All the save contact are  </p>
+        <br/>
+        <label>First Name:</label>
+    <ui:outputText class="slds-input" aura:id="First Name"
+                   value="{!v.objCon.FirstName}" />
+        <br/>
+        <label>Last Name:</label>
+    <ui:outputText class="slds-input" aura:id="Last Name"
+                   value="{!v.objCon.LastName}" />
+        <br/>
+        <label>Phone:</label>
+    <ui:outputPhone class="slds-input" aura:id="Phone"
+                value="{!v.objCon.Phone}" />
+        <br/>
+      <label>Email:</label>
+    <ui:outputEmail class="slds-input" aura:id="Email"
+                   value="{!v.objCon.Email}" />
+        <br/>  
+        
+    
+    </form>
+    <c:eventtoaddContact />
+</aura:component>

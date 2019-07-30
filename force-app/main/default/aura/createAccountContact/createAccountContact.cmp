@@ -1,0 +1,18 @@
+<aura:component controller="InsertContactController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="ContactWrap" type="ParentWrapper"/>
+       {!v.ContactWrap.EmpStatus};
+        {!v.ContactWrap.EmpErrormessage}; 
+        {!v.ContactWrap.EmpSucessmessage}; 
+    
+    <ui:inputText label="Full Name" value="{!v.ContactWrap.EmpName}"/>
+ 
+    <ui:inputText label="EmailId" value="{!v.ContactWrap.EmpEmail}"/>
+  
+    <ui:inputText label="Phone" value="{!v.ContactWrap.EmpPhone}"/>
+  
+    <ui:inputText label="Industry" value="{!v.ContactWrap.EmpMobile}"/>
+    
+    <lightning:button label="Insert" onclick="{! c.handleClick }" />
+	
+</aura:component>

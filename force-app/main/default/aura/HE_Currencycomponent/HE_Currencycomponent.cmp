@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:attribute name="myCurrency" type="integer" default="50"/>
+    <ui:inputCurrency aura:id="amount" label="Amount" class="field" value="{!v.myCurrency}" updateOn="keyup"/>
+ You entered: <ui:outputCurrency value="{!v.myCurrency}"/>
+</aura:component>

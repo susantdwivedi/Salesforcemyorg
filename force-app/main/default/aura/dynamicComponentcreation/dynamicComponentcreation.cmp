@@ -1,0 +1,7 @@
+<aura:component >
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="Dynamicmsg" type="String"/>
+    {!v.Dynamicmsg}<br/>
+    <p>Dynamically created Component</p><br/>
+    {!v.body}	
+</aura:component>

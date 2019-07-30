@@ -1,0 +1,10 @@
+<aura:component >
+<aura:attribute name="numbers" type="List"/>
+<lightning:button onclick="{!c.getNumbers}" label="Display Numbers" />
+
+    <aura:attribute name="MaximumLimit" type="integer" />
+ 	<ui:inputNumber aura:id="maxlimitId" label="Maxmimum limit" value="{!v.MaximumLimit}" />
+    <aura:iteration var="num" items="{!v.numbers}">
+  {!num.value}&nbsp;
+   </aura:iteration>
+</aura:component>

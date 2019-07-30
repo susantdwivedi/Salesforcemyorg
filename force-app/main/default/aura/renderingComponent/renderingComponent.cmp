@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}"/>
+    <aura:attribute name="ShowName" type="String" />
+    {!v.ShowName}
+</aura:component>

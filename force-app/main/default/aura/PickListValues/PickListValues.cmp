@@ -1,0 +1,11 @@
+<aura:component  controller="PickListController" implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="sObjectName" type="String" />
+    <aura:attribute name="fieldName" type="String" />
+    <aura:attribute name="picklistValues" type="Object" />
+    <aura:iteration items="{!v.picklistValues}" var="item">
+        <option value="{!item}">{!item}</option>
+    </aura:iteration>
+    
+    
+</aura:component>

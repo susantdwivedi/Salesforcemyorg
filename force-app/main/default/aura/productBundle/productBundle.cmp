@@ -1,0 +1,109 @@
+<aura:component controller="ProductBundle" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+ <aura:attribute name="SearchString" type="string" default="GenWatt"/>
+    <aura:attribute name="isExist" type="boolean" default="false"/>
+    <aura:attribute name="lstProductBundle" type="ParentWrapper[]" />
+    <form>
+        
+        Enter Product name  
+        <ui:inputText value="{!v.SearchString}"/>
+        
+        <lightning:button onclick="{!c.searchProduct}">Search Product</lightning:button>
+        <aura:if isTrue="{!v.isExist}">  
+            <br/>
+            <lightning:button onclick="{!c.saveProduct}" class="left-margin:150px;">Save Product</lightning:button>
+        <table>
+    <tr>
+        <th/>
+          
+          <th>
+          <span class="slds-truncate" title="Name">Product Name</span>      
+            </th>
+            <th>
+               <span class="slds-truncate" title="Last Name">Product RecordType</span>
+            </th>
+            
+            
+         </tr>
+              
+    </table>
+         <table>
+        <aura:iteration items="{!v.lstProductBundle}" var="prod">
+          <tr>
+              <td scope="row">
+                  <ui:inputCheckBox value="{!prod.IsSelected}" />
+                                
+          </td>
+          <td >
+              <div class="slds-truncate" title="{!prod.objProd.Name}">{!prod.objProd.Name}</div>
+                                
+          </td>
+              <td >
+              <div class="slds-truncate" title="{!prod.objProd.RecordType.Name}">{!prod.objProd.RecordType.Name}</div>
+                                
+          </td>
+              <td scope="row">
+                  <ui:inputNumber value="{!prod.UnitPrice}" disabled="{!prod.IsBundleProduct}"/>
+                                
+          </td>
+              <td scope="row">
+                  <ui:inputNumber value="{!prod.Qty}" disabled="{!prod.IsBundleProduct}"/>
+                                
+          </td>
+              
+              <aura:if isTrue="{!prod.IsBundleProduct}">
+                  <td>
+                  <table>
+    <tr>
+        <th/>
+          
+          <th>
+          <span class="slds-truncate" title="Name">Product Name</span>      
+            </th>
+            <th>
+               <span class="slds-truncate" title="Last Name">Product RecordType</span>
+            </th>
+            
+            
+         </tr>
+    </table>
+                      
+                 <aura:iteration items="{!prod.lstChild}" var="Childprod">
+          <tr>
+              <td scope="row">
+                  <ui:inputCheckBox aura:id="Childcheckbox" value="{!Childprod.IsSelected}" click="{!c.CalculateListPrice}"/>
+                  
+          </td>
+          <td scope="row">
+              <div class="slds-truncate" title="{!Childprod.objProd.Name}">{!Childprod.objProd.Name}</div>
+                                
+          </td>
+            
+              <td scope="row">
+              <div class="slds-truncate" title="{!Childprod.objProd.RecordType.Name}">{!Childprod.objProd.RecordType.Name}</div>
+                                
+          </td>  
+              <td scope="row">
+                  <ui:inputNumber value="{!Childprod.UnitPrice}" />
+                                
+          </td>
+              <td scope="row">
+                  <ui:inputNumber value="{!Childprod.Qty}" />
+                                
+          </td>
+              </tr>  
+        </aura:iteration>
+                  <br/>
+              </td>
+              </aura:if> 
+            </tr>  
+            <br/>
+        </aura:iteration>
+    
+    
+    </table>
+            
+            </aura:if>   
+    </form>
+    
+    
+</aura:component>

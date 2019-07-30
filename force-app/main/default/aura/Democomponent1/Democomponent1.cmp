@@ -1,0 +1,15 @@
+<aura:component >
+    <br/>
+    <aura:attribute name="DemoAtt1" type="String"></aura:attribute>
+	<h1>Let's Explore Lightning</h1>
+    {!v.DemoAtt1}
+    <br/>
+    <div class="White">
+        <h1>This is Sushant Dwivedi</h1>
+    </div>
+    <ul>
+        <li class="Blue">My favorite color is Blue</li>
+        <li class="Red">I love to Code</li>
+        <li class="Green">I respect my mom</li>
+    </ul>
+</aura:component>

@@ -1,0 +1,32 @@
+<apex:page docType="html-5.0" standardController="opportunity" extensions="PositionNoteDealActionController" sidebar="false" showHeader="false" applyHtmlTag="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <apex:stylesheet value="{!URLFOR($Resource.salesforce_lightning, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+
+</head>
+<body>
+    <div class="yourcompanyname">
+        <apex:form >
+
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" >Opportunity</label>
+                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right">
+                    <a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3Dj_id0%253Aj_id4%26lknm%3Dj_id0%253Aj_id4%253Aj_id7%26lktp%3D%27%20%2B%20getElementByIdCS%28%27j_id0%3Aj_id4%3Aj_id7_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27j_id0%3Aj_id4%3Aj_id7%27%29.value.substring%280%2C%2080%29%29%29" id="j_id0:j_id4:j_id7_lkwgt" onclick="setLastMousePosition(event)" title="Opportunity Lookup (New Window)">
+                        <svg aria-hidden="true" class="slds-input__icon slds-icon-text-default" >
+                            <use xlink:href="{!URLFOR($Resource.salesforce_lightning, '/assets/icons/utility-sprite/svg/symbols.svg#search')}"></use>
+                        </svg>
+                    </a>
+                    <apex:inputField styleClass="slds-input" type="text" value="{!positionNote.AccountId}"/>
+                </div>
+            </div>
+
+
+        </apex:form>
+    </div>
+</body>
+
+</html>
+</apex:page>

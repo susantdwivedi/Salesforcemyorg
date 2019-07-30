@@ -1,0 +1,47 @@
+<aura:component controller="studentData" implements="force:appHostable,force:lightningQuickAction,force:hasRecordId">
+<aura:attribute name="StudentDetails" type="Student__c" 
+                    default="{ 'sobjectType': 'Student__c',
+                         'Name': '',
+                         'LT_Date_of_Birth__c': 0,
+                         'LT_Address__c': ''
+                             
+                       }"/>
+    <aura:handler event="c:StudentApplicationEvent" action="{!c.handleApplicationEvent}"/>
+    <div class="container">
+    <form class="slds-form--stacked">
+      <div class="slds-form-element slds-is-required">
+        <div class="slds-form-element__control">
+
+          <ui:inputText aura:id="studname" label="Student Name"
+                        class="slds-input"
+                        labelClass="slds-form-element__label"
+                        value="{!v.StudentDetails.Name}"
+                        required="true"/>
+         </div>
+       </div><br/>
+       <div class="slds-form-element slds-is-required">
+         <div class="slds-form-element__control">
+           <ui:inputText aura:id="sAddress" label="Student Roll"
+                           class="slds-input"
+                           labelClass="slds-form-element__label"
+                           value="{!v.StudentDetails.LT_Address__c}"
+                           required="true"/>
+          </div>
+        </div><br/>
+        <div class="slds-form-element slds-is-required">
+         <div class="slds-form-element__control">
+           <ui:inputText aura:id="sDOB" label="Student DOB"
+                           class="slds-input"
+                           labelClass="slds-form-element__label"
+                           value="{!v.StudentDetails.LT_Date_of_Birth__c}"
+                           required="true"/>
+          </div>
+        </div>	
+        <div class="slds-form-element">
+          <ui:button label="Submit"
+              class="slds-button slds-button--brand"
+              press="{!c.savedata}"/>
+      </div>
+        </form>
+    </div>
+</aura:component>

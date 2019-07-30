@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="myBool" type="Boolean" default="false"/>
+
+    <!-- Handles the aura:valueChange event -->
+    <aura:handler name="change" value="{!v.myBool}" action="{!c.handleValueChange}"/>
+    <ui:button label="change value" press="{!c.changeValue}"/>
+</aura:component>

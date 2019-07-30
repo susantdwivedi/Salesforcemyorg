@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
+    <aura:attribute name="isDoneRendering" type="Boolean" default="false"/>
+    <!-- Other component markup here -->
+    <p>My component</p>	
+</aura:component>
